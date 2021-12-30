@@ -11,7 +11,8 @@
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "doc:deploy": "bash ./scripts/deploy_doc.sh"
   },
   "module": "es/index.js",
   "typings": "es/index.d.ts",
