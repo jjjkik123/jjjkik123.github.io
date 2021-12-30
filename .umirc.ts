@@ -16,6 +16,7 @@ export default defineConfig({
     ['zh-CN', '中文'],
     ['en-US', 'English'],
   ],
+  base: './',
   extraBabelPlugins: [
     [
       'import',
