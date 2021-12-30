@@ -16,16 +16,15 @@ export default defineConfig({
     ['zh-CN', '中文'],
     ['en-US', 'English'],
   ],
-  base: './',
-  extraBabelPlugins: [
-    [
-      'import',
-      {
-        libraryName: 'antd',
-        libraryDirectory: 'es',
-        style: 'css',
-      },
-    ],
-  ],
+  // extraBabelPlugins: [
+  //   [
+  //     'import',
+  //     {
+  //       libraryName: 'antd',
+  //       libraryDirectory: 'es',
+  //       style: 'css',
+  //     },
+  //   ],
+  // ],
   // more config: https://d.umijs.org/config
 });
