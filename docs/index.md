@@ -1,4 +1,5 @@
 ---
+title: wulan
 hero:
   title: blog
   desc: blog site example
@@ -17,5 +18,3 @@ features:
     desc: Balabala
 footer: Open-source MIT Licensed | Copyright © 2020<br />Powered by [dumi](https://d.umijs.org)
 ---
-
-## Hello blog!
