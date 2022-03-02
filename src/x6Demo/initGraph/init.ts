@@ -1,8 +1,12 @@
 import { Graph, Shape, Addon } from '@antv/x6';
+import createNode from './createNode';
+import initEvents from './initEvent';
+import initStencil from './initStencil';
 
 const initGraph = () => {
   const graph = new Graph({
-    container: document.getElementById('container')!,
+    container: document.getElementById('graph-container')!,
+
     grid: true,
     mousewheel: {
       enabled: true,
@@ -50,6 +54,23 @@ const initGraph = () => {
         return !!targetMagnet;
       },
     },
+    minimap: {
+      enabled: true,
+      container: document.getElementById('minimap')!,
+      scalable: false,
+      graphOptions: {
+        async: true,
+        connecting: {
+          router: 'manhattan',
+          connector: {
+            name: 'rounded',
+            args: {
+              radius: 8,
+            },
+          },
+        },
+      },
+    },
     highlighting: {
       magnetAdsorbed: {
         name: 'stroke',
@@ -72,6 +93,13 @@ const initGraph = () => {
     keyboard: true,
     clipboard: true,
   });
+  initEvents(graph);
+  const stencil = initStencil(graph);
+  document.getElementById('stencil')!.appendChild(stencil.container);
+  const { group1, group2 } = createNode(graph);
+  stencil.load(group1, 'group1');
+  stencil.load(group2, 'group2');
+  return graph;
 };
 
 export default initGraph;
